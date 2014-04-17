@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solyanka.Domain", "Solyanka.Domain\Solyanka.Domain.csproj", "{760C1A92-C052-4044-A034-7847983FD403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solyanka.UI", "Solyanka.UI\Solyanka.UI.csproj", "{EA3537FB-0FFE-4BBC-AB99-F70981442067}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{760C1A92-C052-4044-A034-7847983FD403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760C1A92-C052-4044-A034-7847983FD403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760C1A92-C052-4044-A034-7847983FD403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760C1A92-C052-4044-A034-7847983FD403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3537FB-0FFE-4BBC-AB99-F70981442067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3537FB-0FFE-4BBC-AB99-F70981442067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3537FB-0FFE-4BBC-AB99-F70981442067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3537FB-0FFE-4BBC-AB99-F70981442067}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

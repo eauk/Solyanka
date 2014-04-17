@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "My Room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="form-horizontal span9 offset1">
+
+        <div class="user-avatar span2">
+            <span><img src="https://d17f28g3dsa4vh.cloudfront.net/img/default-avatar.png" height="100" width="100" class="avatar"></span>
+            <form action="/accounts/settings/profile/avatar/" method="POST" enctype="multipart/form-data">
+                <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="EG6urVuEkOpuwao8L4XncvNVm3OTS9I6"></div>
+                <input type="file" name="avatar_file" id="id_avatar_file">
+            </form>
+            <button class="btn">Change Picture</button>
+        </div>
+
+        <div class="span6">
+            <h2>vigor56</h2>
+
+            <form action="." method="POST">
+
+                <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="EG6urVuEkOpuwao8L4XncvNVm3OTS9I6"></div>
+
+
+
+
+                <label for="id_full_name">Name</label>
+                <div>
+                    <input id="id_full_name" type="text" name="full_name" maxlength="255">
+
+                </div>
+
+                <label for="id_description">Description</label>
+                <div>
+                    <textarea id="id_description" rows="10" placeholder="Tell us about yourself in 160 characters" cols="40" name="description"></textarea>
+
+                </div>
+            </form>
+        </div>
+
+        <fieldset class="span9">
+            <h4>External Profiles</h4>
+            <div class="control-group">
+                <label class="control-label" for="id_website">Website</label>
+                <div class="controls">
+                    <input id="id_website" type="text" placeholder="http://..." name="website" maxlength="255">
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_twitter">Twitter</label>
+                <div class="controls">
+                    <input id="id_twitter" type="text" placeholder="username" name="twitter" maxlength="255">
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_github">GitHub</label>
+                <div class="controls">
+                    <input id="id_github" type="text" placeholder="username" name="github" maxlength="255">
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_dribbble">Dribbble</label>
+                <div class="controls">
+                    <input id="id_dribbble" type="text" placeholder="username" name="dribbble" maxlength="255">
+
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="span9">
+            <h4>Account settings</h4>
+            <div class="control-group">
+                <label class="control-label" for="id_default_view">Default view</label>
+                <div class="controls">
+                    <select name="default_view" id="id_default_view">
+                        <option value="feed">Feed</option>
+                        <option value="inbox" selected="selected">Inbox</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_default_list_privacy">Default list privacy</label>
+                <div class="controls">
+
+
+                    <select name="default_list_privacy" id="id_default_list_privacy" disabled="disabled">
+                        <option value="public" selected="selected">Public</option>
+                    </select>
+                    Pro feature
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_share_favorites">Share my favorites</label>
+                <div class="controls">
+                    <input checked="checked" type="checkbox" name="share_favorites" id="id_share_favorites">
+
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="submit" class="btn btn-primary" value="Save">
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+

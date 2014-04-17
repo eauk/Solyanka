@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Jquery Ajax Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="jumbotron">
+        <h1>Jquery Ajax Form</h1>
+        <p class="lead">Simple Jquery Ajax Form</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            @using (Html.BeginForm("SaveData", "AjaxTest", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "idForm" }))
+            {
+                <div class="form-group">
+                    <label for="UserName">UserName:</label>
+                    @Html.TextBox("UserName", null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="Age">Age:</label>
+                    @Html.TextBox("Age", null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="Note">Note:</label>
+                    @Html.TextBox("Note", null, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Send" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-3">
+            <p>
+                Enter you name @Html.TextBox("Name")
+                <input type="submit" id="SubmitName" value="Submit" />
+            </p>
+            <p id="WelcomeMsg"></p>
+        </div>
+
+        <div class="col-md-3" id="time">
+        </div>
+
+        <div class="col-md-12" id="results">
+        </div>
+        <div class="col-md-12" id="results">
+            <label>Name: <input type="text" id="username" /></label><br />
+            <input type="button" id="addPerson" value="Add Person" />
+            <input type="button" id="getPeople" value="Get People" />
+            <ul id="people_list"></ul>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            //получение времени как строку при загрузки страницы
+            var url = "/AjaxTest/TellMeTime";
+            $.get(url, null, function (data) {
+                $("#time").html(data);
+            });
+
+            //получение людей как json при нажатии кнопки "Get People"
+            $("#getPeople").click(function () {
+                $.getJSON("/AjaxTest/People", null, getPeopleCallBack);
+            });
+        });
+
+        //вывод всех людей
+        function getPeopleCallBack(peoples) {
+            $("#people_list").text("");
+            $.each(peoples, function (i) {
+                $("#people_list").append("<li>" + this.Id + " - " + this.Name + " - " + this.Email + "</li>");
+            });
+        }
+
+        $("#addPerson").click(function () {
+            var name = $("#username")[0].value;
+            if (name == "") {
+                alert("You must provide a name");
+                return;
+            }
+            $.post("/AjaxTest/People", { Name: name }, null, "json");
+        });
+
+
+        $('#SubmitName').click(function () {
+            var url = "/AjaxTest/WelcomeMsg";
+            var name = $('#Name').val();
+            $.get(url, { input: name }, function (data) {
+                $("#WelcomeMsg").html(data);
+            });
+        });
+
+
+        $("#idForm").submit(function (e) {
+            var dataform = $('#idForm').serialize();
+            var url = "/AjaxTest/SaveData";
+            $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: dataform
+                })
+                .done(function (data) { //проблема
+                    $('#results').html(data);
+                })
+                .fail(function (xhr, str) { //проблема
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                });
+        });
+
+
+    </script>
+

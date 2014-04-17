@@ -1,0 +1,235 @@
+﻿.field-validation-error {
+    float: left;
+    -moz-min-width: 280px;
+    -ms-min-width: 280px;
+    -o-min-width: 280px;
+    -webkit-min-width: 280px;
+    min-width: 280px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    background: #ebf5ff;
+    border: 1px solid #b1d3f5;
+    margin-top: -10px;
+}
+
+
+.account-form {
+    -ms-border-radius: 0;
+    border-radius: 0;
+    padding: .8em 14px;
+    margin-bottom: 10px;
+    width: 343px;
+    border: 1px solid #ccc;
+    width: 343px;
+}
+
+.submit-account-form {
+    background: #d63c23;
+    color: #fff;
+    width: auto;
+    padding: 1em 2.8em;
+    margin-right: 0;
+    font-weight: bold;
+    letter-spacing: 0;
+    font-size: 14px;
+}
+
+a.another-service {
+    background-color: #28b9dd;
+    -ms-text-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    width: 200px;
+    padding: 1.2em 20px 1em;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+a.dark {
+    background-color: #0f66aa;
+}
+
+h2 {
+    display: block;
+    margin-top: 70px;
+}
+
+input, select, textarea {
+    max-width: 280px;
+}
+
+#inputDiv {
+    padding: 0;
+    border: 1px solid #d9d9d9;
+    height: 38px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 690px;
+}
+
+#main {
+    border: 1px solid #d9d9d9;
+    height: 100%;
+    overflow: auto;
+    background-color: #e5e5e5;
+    width: 690px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+#message {
+    width: 100%;
+    height: 37px;
+    padding-left: 10px;
+}
+
+#discussion {
+    /*max-width: 600px;*/
+}
+
+.col-md-12 {
+    margin: 7px 0 7px 0;
+}
+
+.leftUser {
+    float: left;
+}
+
+.rightUser {
+    float: right;
+}
+
+.messageArea {
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 1px 1px #d9d9d9;
+    -ms-box-shadow: 1px 1px 1px 1px #d9d9d9;
+    box-shadow: 1px 1px 1px 1px #d9d9d9;
+    padding: 15px;
+}
+
+#inputDiv > .row > .col-md-12 {
+    margin: 0;
+}
+
+.online {
+    padding: 5px;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+}
+
+    .online:first-child {
+        border-top: 1px solid #d9d9d9;
+        -ms-border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+        -ms-border-top-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .online:last-child {
+        -ms-border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -ms-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .online:hover {
+        background-color: #ff5a16;
+    }
+
+#online_list {
+    width: 239px;
+    float: left;
+    padding-top: 30px;
+    padding-right: 20px;
+    overflow-y: auto;
+    max-height: 520px;
+    max-width: 238px;
+}
+
+#typing_on {
+    border: 1px solid red;
+    position: absolute;
+    bottom: 40px;
+    width: 300px;
+    color: #000;
+}
+
+#add {
+    background-color: #808991;
+    color: #FFF;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    position: absolute;
+	top: 700px;
+	left: 0;
+    -ms-opacity: 1;
+    opacity: 1;
+}
+
+#check:checked~ #add {
+    color: #000;
+    -ms-opacity: 0;
+    opacity: 0;
+    -webkit-transform: translate(10px,0);
+    -moz-transform: translate(10px,0); 
+    -o-transform: translate(10px,0);
+}
+
+
+
+/*.newUser {
+    position: relative;
+    border: 1px darkblue solid;
+    top: 50px;
+    left: 0;
+    -webkit-animation-name: movement;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: movement;
+    -ms-animation-name: movement;
+    -o-animation-name: movement;
+    animation-name: movement;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes movement {
+    from {
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+@keyframes movement {
+    from {
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        top: 12px;
+        left: 12px;
+    }
+}*/
