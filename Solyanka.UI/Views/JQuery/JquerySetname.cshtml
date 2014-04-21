@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Jquery set name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Enter you name @Html.TextBox("Name")
+            <input type="submit" id="SubmitName" value="Submit" />
+        </p>
+        <p id="WelcomeMsg"></p>
+    </div>
+</div>
+
+
+
+<script>
+    $('#SubmitName').click(function () {
+        var url = "/AjaxTest/WelcomeMsg";
+        var name = $('#Name').val();
+        $.get(url, { input: name }, function (data) {
+            $("#WelcomeMsg").html(data);
+        });
+    });
+</script>
+

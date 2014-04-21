@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Jquery ajax form and json result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("SaveData", "AjaxTest", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "idForm" }))
+        {
+            <div class="form-group">
+                <label>UserName:</label>
+                @Html.TextBox("UserName", null, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                @Html.TextBox("Age", null, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Note:</label>
+                @Html.TextBox("Note", null, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Send" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6" id="results">
+    </div>
+</div>
+
+
+
+<script>
+    $("#idForm").submit(function (e) {
+        event.preventDefault();
+        var dataform = $('#idForm').serialize();
+        var url = "/AjaxTest/SaveData";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: dataform
+        })
+            .done(function (data) { //проблема
+                $('#results').html(data);
+            })
+            .fail(function (xhr, str) { //проблема
+                alert('Возникла ошибка: ' + xhr.responseCode);
+            });
+    });
+</script>
+

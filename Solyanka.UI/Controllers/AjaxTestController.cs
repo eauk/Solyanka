@@ -21,13 +21,6 @@ namespace Solyanka.UI.Controllers
             return DateTime.Now.ToString();
         }
 
-        public string WelcomeMsg(string input)
-        {
-            if (!String.IsNullOrEmpty(input))
-                return "Please welcome " + input + ".";
-            else
-                return "Please enter your name.";
-        }
 
         public ActionResult People()
         {
@@ -45,6 +38,15 @@ namespace Solyanka.UI.Controllers
             };
             _repository.Save(user);
             return null;
+        }
+
+
+        public string WelcomeMsg(string input)
+        {
+            if (!String.IsNullOrEmpty(input))
+                return "Please welcome " + input + ".";
+            else
+                return "Please enter your name.";
         }
 
         [HttpPost]

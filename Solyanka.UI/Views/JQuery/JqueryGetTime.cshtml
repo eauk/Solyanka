@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Jquery get time";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6" id="time">
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //получение времени как строку при загрузки страницы
+        var url = "/AjaxTest/TellMeTime";
+        $.get(url, null, function (data) {
+            $("#time").html(data);
+        });
+    });
+</script>
+

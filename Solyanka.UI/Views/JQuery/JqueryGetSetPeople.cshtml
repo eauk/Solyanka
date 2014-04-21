@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Jquery get and set people";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="results">
+        <label>Name: <input type="text" id="username" /></label><br />
+        <input type="button" id="addPerson" value="Add Person" />
+        <input type="button" id="getPeople" value="Get People" />
+        <ul id="people_list"></ul>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        //получение людей как json при нажатии кнопки "Get People"
+        $("#getPeople").click(function () {
+            $.getJSON("/AjaxTest/People", null, getPeopleCallBack);
+        });
+    });
+
+    //вывод всех людей
+    function getPeopleCallBack(peoples) {
+        $("#people_list").text("");
+        $.each(peoples, function (i) {
+            $("#people_list").append("<li>" + this.Id + " - " + this.Name + " - " + this.Email + "</li>");
+        });
+    }
+
+    //запись нового пользователя
+    $("#addPerson").click(function () {
+        var name = $("#username")[0].value;
+        if (name == "") {
+            alert("You must provide a name");
+            return;
+        }
+        $.post("/AjaxTest/People", { Name: name }, null, "json");
+    });
+</script>
+
