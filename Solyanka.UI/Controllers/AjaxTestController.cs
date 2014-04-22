@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Solyanka.Domain;
 using Solyanka.Domain.Core.Repositories;
 using Solyanka.Domain.Persistance;
+using Solyanka.Domain.Specifications;
 
 namespace Solyanka.UI.Controllers
 {
-    
     public class AjaxTestController : Controller
     {
         private readonly IRepository _repository;
@@ -60,6 +61,13 @@ namespace Solyanka.UI.Controllers
                 Password = note
             };
             _repository.Save(user);
+            return Json(user, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult Details(string id)
+        {
+            var user = _repository.Query(whereSpecification: new UserByIdWhereSpec(id)).FirstOrDefault();
             return Json(user, JsonRequestBehavior.AllowGet);
         }
     }

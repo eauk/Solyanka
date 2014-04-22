@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Jquery ajax JSON handlebars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Solyanka.Domain.Persistance.User>
+
+@section Head
+{
+  <script src="@Url.Content("~/Scripts/handlebars-v1.3.0.js")"></script>  
+}
+
+<div class="jumbotron">
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <ul class="users">
+            @foreach (var user in Model)
+            {
+                <li>
+                    @Html.ActionLink(user.Name, "Details", "AjaxTest", new { id = user.Id }, null)
+                </li>
+            }
+        </ul>
+        <img id="indicator" src="@Url.Content("~/Content/ajax-loader.gif")" alt="loading..." style="display:none" />
+    </div>
+    <div class="col-md-6 selected-user" style="display:none">
+        
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("ul.user a").click(function (e) {
+            e.preventDefault();
+            $("#indicator").show();
+            var url = $(this).attr('href');
+            $.ajax({
+                type: 'GET',
+                url: url
+            })
+            .done(function (user) {
+                    $("#indicator").hide();
+                    alert(user.Name);
+                })
+            .fail(function (xhr, str) {
+                alert('Возникла ошибка: ' + xhr.responseCode);
+            });
+
+            //$.getJSON(url, null, function (user) {
+            //    alert("done");
+            //    $("#indicator").hide();
+            //    alert(user.Name);
+            //});
+        });
+    });
+</script>
+

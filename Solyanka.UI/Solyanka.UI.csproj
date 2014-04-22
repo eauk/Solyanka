@@ -160,6 +160,7 @@
     <Content Include="Content\img\.DS_Store" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\handlebars-v1.3.0.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -196,6 +197,7 @@
     <Content Include="Views\JQuery\JqueryGetSetPeople.cshtml" />
     <Content Include="Views\JQuery\JquerySetName.cshtml" />
     <Content Include="Views\JQuery\JqueryAjaxFromAndJsonResult.cshtml" />
+    <Content Include="Views\JQuery\JqueryAjaxJSONHandlebars.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

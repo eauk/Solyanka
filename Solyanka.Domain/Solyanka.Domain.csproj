@@ -82,6 +82,7 @@
       <DependentUpon>EmailRes.resx</DependentUpon>
     </Compile>
     <Compile Include="Specifications\UserByConfirmStringWhereSpec.cs" />
+    <Compile Include="Specifications\UserByIdWhereSpec.cs" />
     <Compile Include="Specifications\UserByEmailWhereSpec.cs" />
     <Compile Include="Specifications\UserByNameWhereSpec.cs" />
     <Compile Include="Specifications\UserByPasswordWhereSpec.cs" />

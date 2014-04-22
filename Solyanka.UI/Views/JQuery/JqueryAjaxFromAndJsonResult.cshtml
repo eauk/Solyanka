@@ -47,10 +47,10 @@
             url: url,
             data: dataform
         })
-            .done(function (data) { 
-                $('#results').html('<p style="border:1px solid red;">'+data.Email+'</p><br />'+data.Name);
+            .done(function (data) {
+                $('#results').html('<p style="border:1px solid red;">' + data.Email + '</p><br />' + data.Name);
             })
-            .fail(function (xhr, str) { //проблема
+            .fail(function (xhr, str) { 
                 alert('Возникла ошибка: ' + xhr.responseCode);
             });
     });
