@@ -47,8 +47,8 @@
             url: url,
             data: dataform
         })
-            .done(function (data) { //проблема
-                $('#results').html(data);
+            .done(function (data) { 
+                $('#results').html('<p style="border:1px solid red;">'+data.Email+'</p><br />'+data.Name);
             })
             .fail(function (xhr, str) { //проблема
                 alert('Возникла ошибка: ' + xhr.responseCode);
