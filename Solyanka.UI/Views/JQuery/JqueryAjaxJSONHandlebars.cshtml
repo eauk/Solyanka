@@ -30,10 +30,25 @@
     </div>
 </div>
 
-
+<script id="details" type="text/x-handlebars-template">
+    <div> 
+        Name: {{ Name }} <br />
+        Email: {{ Email }} <br />
+        Password: {{ Password }} <br />
+        EmailConfirmed: {{#if EmailConfirmed}}
+                        true
+                        {{else}}
+                        false
+                        {{/if}}
+        <hr />
+    </div>
+</script>
 
 <script>
     $(document).ready(function () {
+        var source = $("#details").html();
+        var template = Handlebars.compile(source);
+
         $("ul.users a").click(function (e) {
             e.preventDefault();
             $("#indicator").show();
@@ -41,7 +56,8 @@
 
             $.getJSON(url, null, function (user) {
                 $("#indicator").hide();
-                alert(user.Name);
+                $(".selected-user").show();
+                $('.selected-user').html(template(user));
             });
         });
     });
