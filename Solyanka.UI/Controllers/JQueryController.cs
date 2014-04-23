@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Solyanka.Domain;
 using Solyanka.Domain.Core.Repositories;
 using Solyanka.Domain.Persistance;
+using Solyanka.Domain.Specifications;
 
 namespace Solyanka.UI.Controllers
 {

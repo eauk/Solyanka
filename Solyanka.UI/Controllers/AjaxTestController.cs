@@ -65,7 +65,7 @@ namespace Solyanka.UI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Details(string id)
+        public JsonResult Details(string id)
         {
             var user = _repository.Query(whereSpecification: new UserByIdWhereSpec(id)).FirstOrDefault();
             return Json(user, JsonRequestBehavior.AllowGet);

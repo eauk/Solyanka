@@ -34,27 +34,15 @@
 
 <script>
     $(document).ready(function () {
-        $("ul.user a").click(function (e) {
-            e.preventDefault();
+        $("ul.users a").click(function (e) {
+            event.preventDefault();
             $("#indicator").show();
             var url = $(this).attr('href');
-            $.ajax({
-                type: 'GET',
-                url: url
-            })
-            .done(function (user) {
-                    $("#indicator").hide();
-                    alert(user.Name);
-                })
-            .fail(function (xhr, str) {
-                alert('Возникла ошибка: ' + xhr.responseCode);
-            });
 
-            //$.getJSON(url, null, function (user) {
-            //    alert("done");
-            //    $("#indicator").hide();
-            //    alert(user.Name);
-            //});
+            $.getJSON(url, null, function (user) {
+                $("#indicator").hide();
+                alert(user.Name);
+            });
         });
     });
 </script>
