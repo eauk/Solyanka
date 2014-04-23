@@ -39,7 +39,7 @@
 
 <script>
     $("#idForm").submit(function (e) {
-        event.preventDefault();
+        e.preventDefault();
         var dataform = $('#idForm').serialize();
         var url = "/AjaxTest/SaveData";
         $.ajax({

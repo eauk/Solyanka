@@ -35,7 +35,7 @@
 <script>
     $(document).ready(function () {
         $("ul.users a").click(function (e) {
-            event.preventDefault();
+            e.preventDefault();
             $("#indicator").show();
             var url = $(this).attr('href');
 
