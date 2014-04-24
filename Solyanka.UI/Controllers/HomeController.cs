@@ -10,10 +10,5 @@ namespace Solyanka.UI.Controllers
         {
             return View("Index");
         }
-
-        public ActionResult About()
-        {
-            return View("About");
-        }
     }
 }

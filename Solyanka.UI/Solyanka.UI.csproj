@@ -164,7 +164,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\JQuery\JqueryGetTime.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -173,7 +173,6 @@
     <Content Include="Views\Account\SucceedConfirm.cshtml" />
     <Content Include="Views\Html5\LocalStorage.cshtml" />
     <Content Include="Views\Account\MyRoom.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\JQuery\JqueryGetSetPeople.cshtml" />
     <Content Include="Views\JQuery\JquerySetName.cshtml" />
     <Content Include="Views\JQuery\JqueryAjaxFromAndJsonResult.cshtml" />
