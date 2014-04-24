@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap_3.1.1\js\bootstrap.js" />
     <Content Include="Content\bootstrap_3.1.1\js\bootstrap.min.js" />
     <Content Include="Content\jquery-ui-1.10.4.custom.css" />
+    <Content Include="Content\ui-anim_basic_16x16.gif" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
