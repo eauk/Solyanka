@@ -3,68 +3,76 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="jumbotron">
+</div>
 
-    <h2>localStorage</h2>
+<div class="row">
+    <div class="col-md-3">
+        <h2>localStorage</h2>
 
-    <form id="idForm">
-        <label for="text_color">text color</label>
-        <input type="color" value="" id="text_color" />
-        <br />
-        <label for="text_size">text size</label>
-        <input type="number" value="" id="text_size" />
-        <br />
-        <input type="submit" value="Save changes" />
-    </form>
+        <form id="idForm">
+            <label for="text_color">text color</label>
+            <input type="color" value="" id="text_color" />
+            <br />
+            <label for="text_size">text size</label>
+            <input type="number" value="" id="text_size" />
+            <br />
+            <input type="submit" value="Save changes" />
+        </form>
+    </div>
+    <div class="col-md-9">
+        
+    </div>
+</div>
 
+<script>
+    function save_settings() {
+        localStorage.setItem("text_color", $("#text_color").val());
+        localStorage.setItem("text_size", $("#text_size").val());
 
-    <script>
-        function save_settings() {
-            localStorage.setItem("text_color", $("#text_color").val());
-            localStorage.setItem("text_size", $("#text_size").val());
+        apply();
+    }
 
-            apply();
+    function load_settings() {
+        var txcolor = localStorage.getItem("text_color");
+        var txsize = localStorage.getItem("text_size");
+
+        $("#text_color").val(txcolor);
+        $("#text_size").val(txsize);
+
+        apply();
+    }
+
+    function apply() {
+        $("body").css("color", $("#text_color").val());
+        $("body").css("fontSize", $("#text_size").val() + "px");
+    };
+
+    function hasColorSupport() {
+        input = document.createElement("input");
+        input.setAttribute("type", "color");
+        var hasColorType = (input.type !== "text");
+        if (hasColorType) {
+            var testString = "foo";
+            input.value = testString;
+            hasColorType = (input.value != testString);
+        }
+        return (hasColorType);
+    }
+
+    $(function () {
+        if (!hasColorSupport()) {
+            $('input[type=color]').simpleColor();
         }
 
-        function load_settings() {
-            var txcolor = localStorage.getItem("text_color");
-            var txsize = localStorage.getItem("text_size");
+        load_settings();
 
-            $("#text_color").val(txcolor);
-            $("#text_size").val(txsize);
-
-            apply();
-        }
-
-        function apply() {
-            $("body").css("color", $("#text_color").val());
-            $("body").css("fontSize", $("#text_size").val() + "px");
-        };
-
-        function hasColorSupport() {
-            input = document.createElement("input");
-            input.setAttribute("type", "color");
-            var hasColorType = (input.type !== "text");
-            if (hasColorType) {
-                var testString = "foo";
-                input.value = testString;
-                hasColorType = (input.value != testString);
-            }
-            return (hasColorType);
-        }
-
-        $(function () {
-            if (!hasColorSupport()) {
-                $('input[type=color]').simpleColor();
-            }
-
-            load_settings();
-
-            $("#idForm").submit(function (e) {
-                e.preventDefault();
-                save_settings();
-            });
+        $("#idForm").submit(function (e) {
+            e.preventDefault();
+            save_settings();
         });
-    </script>
+    });
+</script>
 
 
 
