@@ -44,5 +44,10 @@ namespace Solyanka.UI.Controllers
         {
             return View("JqueryAjaxJSONHandlebars", _repository.Query<User>().ToList());
         }
+
+        public ActionResult Autocomplite()
+        {
+            return View("Autocomplite");
+        }
     }
 }

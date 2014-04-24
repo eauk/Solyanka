@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Autocomplite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head
+{
+    <link href="~/Content/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.10.4.custom.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <script>
+        $(function () {
+
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+            ];
+            $("#autocomplete").autocomplete({
+                source: availableTags
+            });
+
+
+            // Hover states on the static widgets
+            $("#dialog-link, #icons li").hover(
+                function () {
+                    $(this).addClass("ui-state-hover");
+                },
+                function () {
+                    $(this).removeClass("ui-state-hover");
+                }
+            );
+        });
+    </script>
+}
+
+<div class="jumbotron">
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="demoHeaders">Simple example</h2>
+        <div>
+            <input id="autocomplete" title="type &quot;a&quot;">
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <h2>Users</h2>
+        <div>
+            <input type="text" id="user" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var autocompleteUrl = '@Url.Action("Find", "AjaxTest")';
+        $("input#user").autocomplete({
+            source: autocompleteUrl,
+            minLength: 2,
+            select: function (event, ui) {
+                alert("Selected " + ui.item.label);
+            }
+        });
+    });
+</script>

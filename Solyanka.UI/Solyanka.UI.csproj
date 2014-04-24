@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap_3.1.1\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\bootstrap_3.1.1\js\bootstrap.js" />
     <Content Include="Content\bootstrap_3.1.1\js\bootstrap.min.js" />
+    <Content Include="Content\jquery-ui-1.10.4.custom.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -142,6 +143,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.min.js" />
     <Content Include="Scripts\jquery.simple-color.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -174,6 +177,7 @@
     <Content Include="Views\JQuery\JquerySetName.cshtml" />
     <Content Include="Views\JQuery\JqueryAjaxFromAndJsonResult.cshtml" />
     <Content Include="Views\JQuery\JqueryAjaxJSONHandlebars.cshtml" />
+    <Content Include="Views\JQuery\Autocomplite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

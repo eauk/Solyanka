@@ -86,6 +86,7 @@
     <Compile Include="Specifications\UserByEmailWhereSpec.cs" />
     <Compile Include="Specifications\UserByNameWhereSpec.cs" />
     <Compile Include="Specifications\UserByPasswordWhereSpec.cs" />
+    <Compile Include="Specifications\UsersByTermWhereSpec.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

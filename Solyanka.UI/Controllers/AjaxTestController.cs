@@ -70,5 +70,18 @@ namespace Solyanka.UI.Controllers
             var user = _repository.Query(whereSpecification: new UserByIdWhereSpec(id)).FirstOrDefault();
             return Json(user, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Find(string term)
+        {
+           var users = _repository.Query(whereSpecification: new UsersByTermWhereSpec(term)).ToArray();
+           var projection = from city in users
+                             select new
+                             {
+                                 id = city.Id,
+                                 label = city.Name,
+                                 value = city.Name
+                             };
+            return Json(projection.ToList(), JsonRequestBehavior.AllowGet);
+        }
     }
 }
