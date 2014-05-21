@@ -9,9 +9,14 @@ namespace Solyanka.UI.Controllers
     public class AngularController : Controller
     {
 
-        public ActionResult Index()
+        public ActionResult Lesson1()
         {
-            return View();
+            return View("Lesson1");
+        }
+
+        public ActionResult Lesson2()
+        {
+            return View("Lesson2");
         }
 
     }

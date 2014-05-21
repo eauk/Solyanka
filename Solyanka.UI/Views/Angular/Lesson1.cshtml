@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="store">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/bootstrap_3.1.1/css/bootstrap.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/bootstrap_3.1.1/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/app.js")"></script>
+    <title>Angular 1</title>
+</head>
+<body class="container" ng-controller="StoreController as store">
+
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="product in store.products" ng-hide="product.soldOut">
+                        <h1>{{product.name}}</h1>
+                        <h2>${{product.price}}</h2>
+                        <p>{{product.description}}</p>
+                        <button ng-show="product.canPurchase">Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</body>
+</html>

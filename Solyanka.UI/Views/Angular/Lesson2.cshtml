@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="store">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="@Url.Content("~/Content/bootstrap_3.1.1/css/bootstrap.css")" rel="stylesheet" />
+        <script src="@Url.Content("~/Content/bootstrap_3.1.1/js/bootstrap.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/angular.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/app.js")"></script>
+        <style>
+            .img-wrap {
+                background: #f8f8f8;
+                height: 200px;
+                margin: 0 auto 20px;
+                padding: 10px;
+                width:  200px;
+            }
+            .img-thumbnails {
+                margin: 0 auto 10px;
+                width: 280px;
+            }
+                .img-thumbnails .thumbnail:last-child {
+                    margin-right: 0;
+                }
+
+                .img-thumbnails .thumbnail {
+                    background: #f8f8f8;
+                    border: 0;
+                    margin-right: 25px;
+                    min-height: 50px;
+                }
+
+            li.small-image {
+                width: 50px;
+            }
+
+            .pull-left {
+                float: left !important;
+            }
+
+            .thumbnail {
+                display: block;
+                padding: 4px;
+                margin-bottom: 20px;
+                line-height: 1.42857143;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                -webkit-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+            }
+
+            li {
+                list-style: none;
+            }
+        </style>
+        <title>Angular 1</title>
+    </head>
+
+    <body class="container" ng-controller="StoreController as store">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="product in store.products" ng-hide="product.soldOut">
+                        <h3>
+                            {{product.name}}
+                            <em class="pull-right">{{product.price | currency}}</em>
+                        </h3>
+                        <!-- Image Gallery  -->
+                        <div class="gallery">
+                            <div class="img-wrap">
+                                <img ng-src="{{product.images[0]}}" />
+                            </div>
+                            <ul class="img-thumbnails clearfix">
+                                <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+                                    <img ng-src="{{image}}" />
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
