@@ -58,7 +58,7 @@
                 list-style: none;
             }
         </style>
-        <title>Angular 2</title>
+        <title>Angular 3</title>
     </head>
 
     <body class="container" ng-controller="StoreController as store">
@@ -71,9 +71,9 @@
                             <em class="pull-right">{{product.price | currency}}</em>
                         </h3>
                         <!-- Image Gallery  -->
-                        <div class="gallery">
+                        <div class="gallery" ng-controller="GalleryController as gallery">
                             <div class="img-wrap">
-                                <img ng-src="{{product.images[0]}}" />
+                                <img ng-src="{{product.images[gallery.current]}}" />
                             </div>
                             <ul class="img-thumbnails clearfix">
                                 <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
@@ -81,9 +81,36 @@
                                 </li>
                             </ul>
                         </div>
+                        <section class="tab" ng-controller="TabController as tab">
+                            <ul class="nav nav-pills">
+                                <li ng-class="{active:tab.isSet(1)}">
+                                    <a ng-click="tab.setTab(1)" href>Description</a>
+                                </li>
+                                <li ng-class="{active:tab.isSet(2)}">
+                                    <a ng-click="tab.setTab(2)" href>Specs</a>
+                                </li>
+                                <li ng-class="{active:tab.isSet(3)}">
+                                    <a ng-click="tab.setTab(3)" href>Reviews</a>
+                                </li>
+                            </ul>
+                            <div ng-show="tab.isSet(1)">
+                                <h4>Description</h4>
+                                <blockquote>{{product.description}}</blockquote>
+                            </div>
+                            <div ng-show="tab.isSet(2)">
+                                <h4>Specs</h4>
+                                <blockquote>Shine: {{product.shine}}</blockquote>
+                            </div>
+                            <div ng-show="tab.isSet(3)">
+                                <h4>Reviews</h4>
+                                <blockquote></blockquote>
+                            </div>
+                        </section>
                     </li>
                 </ul>
             </div>
         </div>
     </body>
 </html>
+
+

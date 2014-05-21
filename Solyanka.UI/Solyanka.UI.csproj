@@ -191,6 +191,7 @@
     <Content Include="Views\JQuery\Autocomplite.cshtml" />
     <Content Include="Views\Angular\Lesson1.cshtml" />
     <Content Include="Views\Angular\Lesson2.cshtml" />
+    <Content Include="Views\Angular\Lesson3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

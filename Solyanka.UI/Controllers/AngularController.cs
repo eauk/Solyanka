@@ -19,5 +19,10 @@ namespace Solyanka.UI.Controllers
             return View("Lesson2");
         }
 
+        public ActionResult Lesson3()
+        {
+            return View("Lesson3");
+        }
+
     }
 }
