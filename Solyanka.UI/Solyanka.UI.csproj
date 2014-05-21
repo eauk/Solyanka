@@ -142,6 +142,7 @@
     <Content Include="Content\images\gem-05.gif" />
     <Content Include="Content\images\gem-06.gif" />
     <Content Include="Content\images\gem-07.gif" />
+    <Content Include="Content\images\gem-08.gif" />
     <Content Include="Content\images\gem-09.gif" />
     <Content Include="Content\jquery-ui-1.10.4.custom.css" />
     <Content Include="Content\ui-anim_basic_16x16.gif" />
@@ -192,6 +193,7 @@
     <Content Include="Views\Angular\Lesson1.cshtml" />
     <Content Include="Views\Angular\Lesson2.cshtml" />
     <Content Include="Views\Angular\Lesson3.cshtml" />
+    <Content Include="Views\Angular\Lesson4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

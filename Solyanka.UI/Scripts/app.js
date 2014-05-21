@@ -85,7 +85,7 @@
         images: [
           "/Content/images/gem-06.gif",
           "/Content/images/gem-07.gif",
-          "/Content/images/gem-05.gif"
+          "/Content/images/gem-08.gif"
         ],
         reviews: [{
             stars: 1,
