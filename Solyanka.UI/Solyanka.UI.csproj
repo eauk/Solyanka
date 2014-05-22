@@ -194,6 +194,7 @@
     <Content Include="Views\Angular\Lesson2.cshtml" />
     <Content Include="Views\Angular\Lesson3.cshtml" />
     <Content Include="Views\Angular\Lesson4.cshtml" />
+    <Content Include="Views\Angular\Lesson5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
