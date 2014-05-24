@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Solyanka.UI.Controllers
 {
-    public class AngularController : Controller
+    public class AngularGemStoreController : Controller
     {
 
         public ActionResult Lesson1()

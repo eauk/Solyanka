@@ -3,6 +3,8 @@
 (function() {
     var app = angular.module('store', []);
 
+        
+
     app.controller('StoreController', function() {
         this.products = gems;
     });
@@ -34,6 +36,13 @@
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review = {};
+        };
+    });
+
+    app.directive('productDescription', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '@Url.Content("~/Views/Angular/product-description.html")'
         };
     });
 
